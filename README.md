@@ -1,3 +1,5 @@
+[![CI](https://github.com/AnjanaTulasi/version-compat-validator/actions/workflows/ci.yml/badge.svg)] (https://github.com/AnjanaTulasi/version-compat-validator/actions/workflows/ci.yml)
+
 # Version Compatibility Validator (Python)
 
 A lightweight CLI tool that validates software component versions against compatibility rules.
@@ -36,4 +38,15 @@ if [ $? -ne 0 ]; then
   echo "Compatibility validation failed"
   exit 1
 fi
+
+## CI Behavior
+
+This pipeline is expected to fail when incompatible service versions are detected.
+
+Example:
+- API Gateway ≥ 2.3.0 requires Auth Service ≥ 1.7.0
+- If this rule is violated, the validator exits with code `1`
+- GitHub Actions marks the build as failed to prevent unsafe deployments
+
+This mimics real-world release gating in regulated systems.
 
