@@ -24,7 +24,7 @@ This tool runs quick compatibility checks before deployment or testing.
 
 ## Run
 
-```bash
+``bash
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
