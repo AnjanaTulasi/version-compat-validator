@@ -19,3 +19,21 @@ source .venv/bin/activate
 pip install -r requirements.txt
 python3 src/validate_versions.py
 
+## CI / Automation Friendly Exit Codes
+
+This tool is designed to integrate cleanly with CI/CD pipelines.
+
+| Exit Code | Description |
+|---------|-------------|
+| `0` | All triggered compatibility checks passed |
+| `1` | One or more compatibility checks failed |
+| `2` | Configuration or rule validation error |
+
+### Example CI Usage
+```bash
+python3 src/validate_versions.py
+if [ $? -ne 0 ]; then
+  echo "Compatibility validation failed"
+  exit 1
+fi
+
