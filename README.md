@@ -69,9 +69,9 @@ This mimics real-world release gating in regulated systems.
 ## Challenges Faced & How I Resolved Them
 
 1. Designing CI-friendly failure behavior
--Challenge:
+- Challenge:
 The tool needed to clearly signal success or failure to CI pipelines, not just print messages.
--Solution:
+- Solution:
 Implemented explicit exit codes:
 
 0 → All compatibility checks passed
@@ -79,16 +79,16 @@ Implemented explicit exit codes:
 This allows GitHub Actions (and any CI system) to automatically block builds when incompatibilities are detected.
 
 2. GitHub Actions failing even when the script worked locally
--Challenge:
+- Challenge:
 The script ran fine locally, but GitHub Actions showed a failing workflow.
--Solution:
+- Solution:
 Realized this was expected behavior — the script was correctly exiting with code 1 due to a real compatibility violation.
 This confirmed the CI gate was working as intended, not broken.
 
 3. YAML syntax errors in GitHub Actions
--Challenge:
+- Challenge:
 Small indentation and syntax mistakes caused the workflow to be marked as an invalid YAML file.
--Solution:
+- Solution:
 Carefully validated indentation and structure, ensuring:
 
 Proper spacing
@@ -97,9 +97,9 @@ Correct action versions
 After fixing syntax, the workflow executed reliably.
 
 4. CI badge showing “failing”
--Challenge:
+- Challenge:
 The GitHub Actions badge showed a failing status on the README.
--Solution:
+- Solution:
 Understood that the badge reflects the latest CI run.
 A failing badge correctly indicates that compatibility rules are being enforced — not that the pipeline is broken.
 
