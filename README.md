@@ -65,6 +65,7 @@ Implemented explicit exit codes:
 0 → All compatibility checks passed
 1 → One or more compatibility checks failed
 This allows GitHub Actions (and any CI system) to automatically block builds when incompatibilities are detected.
+
 2. GitHub Actions failing even when the script worked locally
 Challenge:
 The script ran fine locally, but GitHub Actions showed a failing workflow.
