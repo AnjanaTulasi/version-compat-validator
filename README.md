@@ -68,10 +68,9 @@ This mimics real-world release gating in regulated systems.
 - Challenge:
 The tool needed to clearly signal success or failure to CI pipelines, not just print messages.
 - Solution:
-Implemented explicit exit codes:
-
-- 0 → All compatibility checks passed
-- 1 → One or more compatibility checks failed
+Implemented explicit exit codes: | 
+0 → All compatibility checks passe |
+1 → One or more compatibility checks failed|
 - This allows GitHub Actions (and any CI system) to automatically block builds when incompatibilities are detected.
 
 2. GitHub Actions failing even when the script worked locally
