@@ -51,7 +51,7 @@ if [ $? -ne 0 ]; then
   echo "Compatibility validation failed"
   exit 1
 fi
-
+```
 ---
 
 ## CI Behavior
