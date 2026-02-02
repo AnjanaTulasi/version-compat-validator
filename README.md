@@ -4,7 +4,7 @@
 
 A lightweight CLI tool that validates software component versions against compatibility rules.
 
----
+
 
 ## Why this exists
 
