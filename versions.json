@@ -1,6 +1,6 @@
 {
   "api_gateway": "2.3.1",
-  "auth_service": "1.6.0",
+  "auth_service": "1.7.0",
   "patient_ui": "3.1.0",
   "database": "14.2",
   "python_runtime": "3.11.6"
