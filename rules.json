@@ -1,0 +1,26 @@
+{
+  "constraints": [
+    {
+      "if": { "component": "api_gateway", "version": ">=2.3.0" },
+      "then": [
+        { "component": "auth_service", "version": ">=1.7.0" }
+      ],
+      "reason": "API Gateway 2.3+ requires Auth Service 1.7+ for token schema v2"
+    },
+    {
+      "if": { "component": "patient_ui", "version": ">=3.0.0" },
+      "then": [
+        { "component": "api_gateway", "version": ">=2.2.0" }
+      ],
+      "reason": "Patient UI 3.0+ calls /v2 endpoints available in API Gateway 2.2+"
+    },
+    {
+      "if": { "component": "database", "version": ">=14.0" },
+      "then": [
+        { "component": "api_gateway", "version": ">=2.1.0" }
+      ],
+      "reason": "DB 14+ requires updated driver used by API Gateway 2.1+"
+    }
+  ]
+}
+
