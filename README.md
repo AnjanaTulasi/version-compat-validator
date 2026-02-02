@@ -51,6 +51,8 @@ Example:
 
 This mimics real-world release gating in regulated systems.
 
+---------------------------------------------------------------
+
 ## Challenges Faced & How I Resolved Them
 
 ### 1. Designing CI-friendly failure behavior
