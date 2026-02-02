@@ -11,7 +11,6 @@ A lightweight CLI tool that validates software component versions against compat
 In system validation and release workflows, mismatched component versions can break integrations.  
 This tool runs quick compatibility checks before deployment or testing.
 
----
 
 ## What it does
 
@@ -20,7 +19,6 @@ This tool runs quick compatibility checks before deployment or testing.
 - Prints a PASS / FAIL report
 - Returns exit codes suitable for CI usage
 
----
 
 ## Run
 
@@ -30,7 +28,7 @@ source .venv/bin/activate
 pip install -r requirements.txt
 python3 src/validate_versions.py
 ```
----
+
 
 ## CI / Automation Friendly Exit Codes
 
@@ -52,10 +50,9 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 ```
----
+
 
 ## CI Behavior
-
 This pipeline is expected to fail when incompatible service versions are detected.
 Example:
 
@@ -64,7 +61,6 @@ If this rule is violated, the validator exits with code 1
 GitHub Actions marks the build as failed to prevent unsafe deployments
 This mimics real-world release gating in regulated systems.
 
----
 
 ## Challenges Faced & How I Resolved Them
 
@@ -74,15 +70,15 @@ The tool needed to clearly signal success or failure to CI pipelines, not just p
 - Solution:
 Implemented explicit exit codes:
 
-0 → All compatibility checks passed
-1 → One or more compatibility checks failed
-This allows GitHub Actions (and any CI system) to automatically block builds when incompatibilities are detected.
+- 0 → All compatibility checks passed
+- 1 → One or more compatibility checks failed
+- This allows GitHub Actions (and any CI system) to automatically block builds when incompatibilities are detected.
 
 2. GitHub Actions failing even when the script worked locally
 - Challenge:
 The script ran fine locally, but GitHub Actions showed a failing workflow.
 - Solution:
-Realized this was expected behavior — the script was correctly exiting with code 1 due to a real compatibility violation.
+- Realized this was expected behavior — the script was correctly exiting with code 1 due to a real compatibility violation.
 This confirmed the CI gate was working as intended, not broken.
 
 3. YAML syntax errors in GitHub Actions
@@ -91,7 +87,7 @@ Small indentation and syntax mistakes caused the workflow to be marked as an inv
 - Solution:
 Carefully validated indentation and structure, ensuring:
 
-Proper spacing
+- Proper spacing
 Correct run: | usage
 Correct action versions
 After fixing syntax, the workflow executed reliably.
@@ -103,10 +99,9 @@ The GitHub Actions badge showed a failing status on the README.
 Understood that the badge reflects the latest CI run.
 A failing badge correctly indicates that compatibility rules are being enforced — not that the pipeline is broken.
 
-This mirrors real-world CI/CD behavior where intentional failures protect production systems.
+- This mirrors real-world CI/CD behavior where intentional failures protect production systems.
 
 
----
 
 ## ✅ What this fixes (without changing meaning)
 
@@ -116,7 +111,6 @@ This mirrors real-world CI/CD behavior where intentional failures protect produc
 - ✅ Clean white GitHub README  
 - ✅ Recruiter-friendly & senior-looking  
 
----
 
 ## Final step
 
