@@ -15,7 +15,7 @@ This tool runs quick compatibility checks before deployment or testing.
 - Returns exit codes suitable for CI usage
 
 ## Run
-```bash
+bash
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
@@ -32,7 +32,7 @@ This tool is designed to integrate cleanly with CI/CD pipelines.
 | `2` | Configuration or rule validation error |
 
 ### Example CI Usage
-```bash
+bash
 python3 src/validate_versions.py
 if [ $? -ne 0 ]; then
   echo "Compatibility validation failed"
